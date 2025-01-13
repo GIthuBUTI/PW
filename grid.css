@@ -1,7 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
 *{
     text-align: center;
     color: white; 
-    font-family: sans-serif;
+    font-family: "Uncial Antiqua", sans-serif;
 }
 
 main {/*la griglia*/
