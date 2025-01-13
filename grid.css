@@ -1,6 +1,6 @@
 *{
     text-align: center;
-    color: 'white'; 
+    color: white; 
     font-family: sans-serif;
 }
 
@@ -41,10 +41,21 @@ aside {
 
 @media screen and (max-width: 1000px) {
     main {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas:
-            "nav"
-            "article"
-            "aside";
+            "aside aside"
+            "nav nav"   
+            "article article";
+        
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "nav nav"
+            "aside aside"
+            "article article";
     }
 }
