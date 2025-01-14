@@ -1,6 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
-*{
-    text-align: center;
-    color: white; 
-    font-family: 'Uncial Antiqua', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metamorphous&display=swap');
+html{
+    color:black;
+    background-color:bisque;
+    font-family: 'Cinzel Decorative', 'Cormorant Unicase', 'Macondo Swash Caps', 'MedievalSharp', 'Metamorphous', sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em; 
+    grid-template-areas:
+        "nav nav"
+        "section aside"
+        "section section"
+        "section section";
+}
+
+header, nav, aside, section {
+    margin-left: 10em;
+    margin-right: 10em;
+    padding: 1em;
+    
+}
+section{
+    p::first-letter{
+        font-size: 2.5em;
+        float: left;
+    }
+         
+    grid-area: section;
+    column-count: 2;
+    column-gap: 5em;
+
+}
+
+nav{
+    position: relative;
+    width:auto;
+    right: 0;
+    grid-area: nav;
+
+}
+
+aside{
+    grid-area: aside;
+    position: static;
+    float: right;
+    
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "aside aside"
+            "nav nav"   
+            "article article";
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "nav nav"
+            "aside aside"
+            "article article";
+    }
 }
