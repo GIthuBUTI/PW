@@ -11,8 +11,8 @@ main {
     
     grid-template-areas:
         "...  nav"
-        "header ..."
-        "section ...";
+        "header header"
+        "section section";
 }
 
 header, section {
