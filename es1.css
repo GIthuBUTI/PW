@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Macondo+Swash+Caps&family=MedievalSharp&family=Metamorphous&display=swap');
+
 html{
     color:black;
     background-color:bisque;
-    font-family: 'Metamorphous','Cinzel Decorative', 'Cormorant Unicase', 'Macondo Swash Caps', 'MedievalSharp', sans-serif;
+    font-family: 'Metamorphous','Cinzel Decorative', 'Cormorant Unicase', 'Macondo Swash Caps', 'MedievalSharp';
+}
+
+body {
+    background-color: #C0C0C0;
 }
 
 main {
@@ -10,41 +15,67 @@ main {
     grid-template-columns: 6fr 1fr;
     
     grid-template-areas:
-        "...  nav"
-        "header header"
-        "section section";
+        "titolo nav"
+        "contenuto ..."
+        "footer footer";
 }
 
-header, section {
-    margin-left: 3em;
-    margin-right: 3em;
-    padding: 2em;
-    
+h1 {
+    grid-area: titolo;
 }
 
-
-header{
-    grid-area: header;
-    }
-section{
-    p::first-letter{
-        font-size: 2.5em;
-        float: left;
-    }
-         
-    grid-area: section;
-    column-count: 2;
-    column-gap: 5em;
-
+h2 {
+    display: inline;
 }
 
-nav{
-    position: relative;
-    width:auto;
-    right: 0;
+nav {
     grid-area: nav;
+}
+
+#content{
+    grid-area: contenuto;
+}
+
+section:first-of-type::first-letter {
+    font-size: 2em;
+    float: left;
+    font-weight: bold;
+    margin-top: -0.15em;
+}
+
+article {
+    padding: 5px;
+    background-color: #ffffff;
+    columns: 2;
+    margin: 2% 5%;
+    /*
+    border-right: 2px solid #000000;  
+    border-bottom: 2px solid #000000;
+    */
+    box-shadow: 0 5px 5px #000000;
 
 }
+
+section {
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+}
+
+input[type="checkbox"]:checked ~ section {
+    display: initial;
+}
+
+a[href^=mailto]::before {
+    content: "📧 ";
+}
+
+a[href^=mailto]::after {
+    content: "(" attr(href) ")";
+}
+
 
 
 @media screen and (max-width: 800px) {
@@ -59,11 +90,10 @@ nav{
 }
 
 @media screen and (max-width: 600px) {
-    main {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas:
-            "nav nav"
-            "aside aside"
-            "article article";
+    body {
+        background-color: initial;
+    }
+    article {
+        columns: 1;
     }
 }
